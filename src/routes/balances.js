@@ -6,7 +6,7 @@ function setupBalancesRoutes(app) {
 	const { Profile } = app.get('models');
 	const sequelize = app.get('sequelize');
 
-	app.post('/balances/deposit/:userId', getProfile, param('userId').isNumeric(), body('amount').isNumeric(), validate, async (req, res) => {
+	app.post('/balances/deposit/:userId', getProfile, param('userId').isNumeric(), body('amount').isFloat({ min: 0 }), validate, async (req, res) => {
 
 		const { userId } = req.params;
 		const { amount } = req.body;
