@@ -51,9 +51,6 @@ function setupJobsRoutes(app) {
 				await client.save({ transaction });
 				await contractor.save({ transaction });
 				await job.save({ transaction });
-
-				return true;
-
 			});
 
 		}

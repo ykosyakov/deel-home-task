@@ -1,6 +1,6 @@
+/* eslint-disable no-console */
 const app = require('./app');
 
-init();
 
 async function init() {
   try {
@@ -12,3 +12,5 @@ async function init() {
     process.exit(1);
   }
 }
+
+init();
