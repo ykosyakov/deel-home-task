@@ -41,7 +41,7 @@ function setupAdminRoutes(app) {
 		const bestClientsQuery = `
 			select
 				p.id,
-				lastName || ' ' || firstName fullName,
+				firstName || ' ' || lastName fullName,
 				sum(paidInfo.total_amount) paid
 			from "Profiles" p join "Contracts" c on c.ClientId = p.id
 			join (select ContractId, sum(price) total_amount
